@@ -13,7 +13,7 @@
 
 		python WordFrequency.py
 
-<b>Without Python installed - (Docker/Docker dashboard installed):</b>
+<b>Without Python installed - (Docker/Docker desktop installed):</b>
 	<p>Please go to the project directory and run below commands to install and run application.</p>
 
 		docker build -t wordanalyzer .
