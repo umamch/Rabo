@@ -40,42 +40,52 @@ class WordFrequencyAnalyzer():
     def __init__(self):
         pass
 
-if __name__ == '__main__':
-
-
+def main():
     print("Starting the WordFrequency\n"
           "Please Enter the Input text below:")
-    Input_Text= input()
-    obj= WordFrequencyAnalyzer()
-    print("The highest frequency in the given text is: ",obj.calculate_highest_frequency(Input_Text))
-    print("Do you wish to continue to get the frequency of a given word in the text? Press 'Y' or \
-     'N'")
-    Answer = input()
+    input_text = input()
+    obj = WordFrequencyAnalyzer()
+    print("The highest frequency in the given text is: ", obj.calculate_highest_frequency(input_text))
+    print("Do you wish to continue to get the frequency of a given word in the text? Press 'Y' or 'N'")
+    answer = input()
 
-    if Answer == "Y" or Answer == 'y':
+    if answer == "Y" or answer == 'y':
         print("Enter the word below:")
         word = input()
-        print("The frequency of the word {} in text is:".format(word), obj.calculate_frequency_for_word(Input_Text, \
-                                                                                                        word))
-    elif Answer == 'N' or Answer == 'n':
-        print ("please continue with the rest of program")
+        print("The frequency of the word {} in text is:".format(word), obj.calculate_frequency_for_word(input_text, word))
+    elif answer == 'N' or answer == 'n':
+        print("please continue with the rest of program")
 
     else:
         print("You've not selected the correct option, please continue with the rest of program")
 
-    print("Do you wish to calculate the most frequent words? Press 'Y' or \
-     'N'")
-    Answer_most_frequent= input()
+    print("Do you wish to calculate the most frequent words? Press 'Y' or 'N'")
+    answer = input()
 
-    if Answer == "Y" or Answer == 'y':
+    if answer == "Y" or answer == 'y':
         print("Enter the number of frequent words:")
         number = input()
         print("The frequency of the latest {} words in text are:".format(number))
-        wl = obj.calculate_most_frequent_n_words(Input_Text,int(number))
+        wl = obj.calculate_most_frequent_n_words(input_text, int(number))
         for elm in wl:
             print(elm.__dict__)
-    elif Answer == 'N' or Answer == 'n':
+    elif answer == 'N' or answer == 'n':
         print("Thanks for using the Word Frequency Analyzer")
 
     else:
         print("You've not selected the correct option, Thanks for using the Word Frequency Analyzer")
+
+if __name__ == '__main__':
+
+    while True:
+        main()
+        while True:
+            answer = str(input('Do you wish to run again? (y/n): '))
+            if answer in ('y', 'n'):
+                break
+            print("invalid input.")
+        if answer == 'y':
+            continue
+        else:
+            print("Goodbye! Thank you for using word analyzer")
+            break
